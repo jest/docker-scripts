@@ -75,7 +75,7 @@ __dckvol_recreate_confirming() {
 
 __dckvol_run_and_remove() {
 	local CID=$(docker run -itd "$@")
-	docker attach $CID
+	docker attach --no-stdin=true $CID
 	docker rm $CID
 }
 
