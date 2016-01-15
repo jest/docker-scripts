@@ -15,7 +15,7 @@ __find_rancher_service_container () {
 	if [[ -n "$srv" ]]; then
 		srv="=$srv"
 	fi
-	docker ps -f label=io.rancher.project_service.name"$srv" -q
+	docker ps -f label=io.rancher.project_service.name"$srv" -a -q
 }
 
 
