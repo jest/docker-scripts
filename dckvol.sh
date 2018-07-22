@@ -1,5 +1,9 @@
 # Utilities for managing docker volumes
 
+__dckvol_export_functions () {
+	export -f dckvol_ls dckvol_clone dckvol_backup dckvol_restore __dckvol_recreate_confirming __dckvol_run_and_remove
+}
+
 dckvol_ls () (
 	set -eu
 	[[ $# > 0 ]] || { echo "Usage: dckvol_ls container ... " >&2 && exit 1; }
